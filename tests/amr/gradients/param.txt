@@ -1,0 +1,130 @@
+%----  Relevant files 
+InitCondFile        ./ICs
+OutputDir           ./output
+SnapshotFileBase    snap
+
+
+%---- File formats
+ICFormat            3
+SnapFormat          3 
+
+%---- CPU-time limits
+TimeLimitCPU              90000   % in seconds
+CpuTimeBetRestartFile     7200    % in seconds
+ResubmitOn        0
+ResubmitCommand   my-scriptfile 
+
+%----- Memory alloction
+MaxMemSize        2300
+
+%---- Caracteristics of run
+TimeBegin           0.0
+TimeMax             0.01
+
+%---- Basic code options that set the type of simulation
+ComovingIntegrationOn    0
+PeriodicBoundariesOn     1
+CoolingOn                0
+StarformationOn          0
+
+%---- Cosmological parameters
+Omega0                0
+OmegaLambda           0
+OmegaBaryon           0
+HubbleParam           1
+BoxSize               1.0
+
+%---- Output frequency and output paramaters
+OutputListOn              0
+OutputListFilename        ol
+TimeBetSnapshot           0.01
+TimeOfFirstSnapshot       0.0
+TimeBetStatistics         0.5
+NumFilesPerSnapshot       1
+NumFilesWrittenInParallel 1 
+
+%---- Accuracy of time integration
+TypeOfTimestepCriterion  0 
+ErrTolIntAccuracy        0.012 
+CourantFac               0.3
+MaxSizeTimestep          0.01
+MinSizeTimestep          0.0 
+ActivePartFracForNewDomainDecomp 0.01
+
+%---- Treatment of empty space and temperature limits
+InitGasTemp                           1.0
+MinGasTemp                            1.0e-10
+MinimumDensityOnStartUp               1.0e-20
+LimitUBelowThisDensity                0.0
+LimitUBelowCertainDensityToThisValue  0.0
+MinEgySpec                            0.0
+
+%---- Tree algorithm, force accuracy, domain update frequency
+TypeOfOpeningCriterion                1
+ErrTolTheta                           0.7
+ErrTolForceAcc                        0.0025
+MultipleDomains                       8
+TopNodeFactor                         1
+ 
+%---- Initial density estimate
+DesNumNgb              64
+MaxNumNgbDeviation     2 
+
+%---- System of units
+%UnitLength_in_cm         3.085678e24        ;  1.0 Mpc
+%UnitMass_in_g            1.989e43           ;  1.0e10 solar masses
+%UnitVelocity_in_cm_per_s 1e5                ;  1 km/sec
+UnitLength_in_cm         1.0
+UnitMass_in_g            1.0
+UnitVelocity_in_cm_per_s 1.0
+GravityConstantInternal  0
+
+%---- Gravitational softening length
+SofteningComovingType0       0.00044
+SofteningComovingType1       0.00044
+SofteningComovingType2       0.00044
+SofteningComovingType3       0.00044
+SofteningComovingType4       0.00044
+SofteningComovingType5       0.00044
+
+SofteningMaxPhysType0        0.00022
+SofteningMaxPhysType1        0.00022
+SofteningMaxPhysType2        0.00022
+SofteningMaxPhysType3        0.00022
+SofteningMaxPhysType4        0.00022
+SofteningMaxPhysType5        0.00022
+
+SofteningTypeOfPartType0   1
+SofteningTypeOfPartType1   1
+SofteningTypeOfPartType2   1
+SofteningTypeOfPartType3   1
+SofteningTypeOfPartType4   1
+SofteningTypeOfPartType5   5
+  
+GasSoftFactor        2.5 
+
+%----- Mesh regularization options
+CellShapingSpeed        0.5
+%CellMaxAngleFactor     2.25
+CellShapingFactor       1.0
+MinRefLevel             2
+MaxRefLevel             10
+MeshSmoothing           2
+%TargetGasMassFactor    1.0
+%RefinementCriterion    1
+%DerefinementCriterion  1
+%DG_TargetSlope         1
+%DG_SlopeRangeFactor 1e12
+
+%DG_M 0.5
+
+%MaxVolumeDiff                   8
+%MinVolume                       3.05e-11
+%MaxVolume                       3.05e-5
+
+%—— cooling
+%TreecoolFile           ./data/TREECOOL_fg_dec11 
+
+%-- MHD seedfield
+%MHDSeedDir   1
+%MHDSeedValue 0.0

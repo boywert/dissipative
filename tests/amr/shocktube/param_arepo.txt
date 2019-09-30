@@ -1,0 +1,122 @@
+%@ cores 10-16
+%@ openmp 2
+
+%----  Relevant files 
+InitCondFile        ics
+OutputDir           output_arepo
+SnapshotFileBase    snap
+OutputListFilename  foo 
+
+% MHD
+%MHDSeedDir          0 
+%MHDSeedValue        0
+
+%---- File formats
+ICFormat           3
+SnapFormat         3 
+
+%---- CPU-time limits
+TimeLimitCPU             190000   % in seconds
+CpuTimeBetRestartFile     7200    % in seconds
+ResubmitOn        0
+ResubmitCommand   my-scriptfile 
+
+%----- Memory alloction
+MaxMemSize        2300
+
+%---- Caracteristics of run
+TimeBegin           0  % Begin of the simulation
+TimeMax	            0.2       % End of the simulation
+
+%---- Basic code options that set the type of simulation
+ComovingIntegrationOn    0 
+PeriodicBoundariesOn     1
+CoolingOn		 0
+StarformationOn		 0
+
+%---- Cosmological parameters
+Omega0	              0.25
+OmegaLambda           0.75
+OmegaBaryon           0.04
+HubbleParam           0.73
+BoxSize               2.
+
+%---- Output frequency and output paramaters
+OutputListOn              0 
+TimeBetSnapshot           0.01
+TimeOfFirstSnapshot       0.0
+TimeBetStatistics         0.5
+NumFilesPerSnapshot       1
+NumFilesWrittenInParallel 1 
+
+%---- Accuracy of time integration
+TypeOfTimestepCriterion  0 
+ErrTolIntAccuracy        0.012 
+CourantFac               0.3
+MaxSizeTimestep          0.005
+MinSizeTimestep          0.0 
+
+
+%---- Treatment of empty space and temperature limits
+InitGasTemp                           0 
+MinGasTemp                            0
+MinimumDensityOnStartUp               0 
+LimitUBelowThisDensity                0.0
+LimitUBelowCertainDensityToThisValue  0.0
+MinEgySpec                            0.0
+
+%---- Tree algorithm, force accuracy, domain update frequency
+TypeOfOpeningCriterion                1
+ErrTolTheta                           0.7
+ErrTolForceAcc                        0.0025
+MultipleDomains                       1
+TopNodeFactor                         128
+ActivePartFracForNewDomainDecomp      0.5
+ 
+%---- Initial density estimate
+DesNumNgb              64
+MaxNumNgbDeviation     1 
+
+%---- System of units
+UnitLength_in_cm         1        
+UnitMass_in_g            1          
+UnitVelocity_in_cm_per_s 1             
+GravityConstantInternal  0
+
+%---- Gravitational softening length
+SofteningComovingType0       0.001
+SofteningComovingType1      0.001
+SofteningComovingType2      0.007
+SofteningComovingType3     0.081
+SofteningComovingType4     0.001
+SofteningComovingType5     0.001
+
+SofteningMaxPhysType0       0.0005
+SofteningMaxPhysType1      0.0005
+SofteningMaxPhysType2      0.007
+SofteningMaxPhysType3     0.081
+SofteningMaxPhysType4     0.0005
+SofteningMaxPhysType5     0.0005
+
+SofteningTypeOfPartType0  0
+SofteningTypeOfPartType1  0
+SofteningTypeOfPartType2  0
+SofteningTypeOfPartType3  0
+SofteningTypeOfPartType4  0
+SofteningTypeOfPartType5  0
+  
+GasSoftFactor        2.5 
+
+%----- Mesh regularization options
+CellShapingSpeed       0.5                  
+
+%ReferenceGasPartMass    6.e-05
+%TargetGasMassFactor    1
+%RefinementCriterion    0
+%DerefinementCriterion  0
+
+%------AMR
+CellShapingFactor	1
+MinRefLevel		2
+MaxRefLevel		40
+MeshSmoothing 		0
