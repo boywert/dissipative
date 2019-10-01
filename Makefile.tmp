@@ -1376,6 +1376,12 @@ INCL    += sidm/sidm_vars.h sidm/sidm_proto.h
 SUBDIRS += sidm
 endif
 
+ifeq (DISSIPATIVE,$(findstring DISSIPATIVE,$(CONFIGVARS)))
+OBJS    += dissipative/dissipative_eos.o dissipative/dissipative_cooling.o
+INCL    += dissipative/dissipative_proto.h
+SUBDIRS += dissipative
+endif
+
 ifeq (ADJ_BOX_POWERSPEC,$(findstring ADJ_BOX_POWERSPEC,$(CONFIGVARS)))
 OBJS    += power_spec/adj_box_powerspec.o
 INCL    += power_spec/adj_box_powerspec_proto.h

@@ -374,3 +374,6 @@ NETWORK_NSE_H
 
 #Windtunnel
 WINDTUNNEL_COORD
+
+#Dissipative dark sector
+DISSIPATIVE
