@@ -137,16 +137,17 @@ void set_pressure_of_cell_internal(struct particle_data *localP, struct sph_part
   return;
 #endif
 
-
-#ifdef ISOTHERM_EQS
-  localSphP[i].Pressure = localSphP[i].Density * All.IsoSoundSpeed * All.IsoSoundSpeed;
-#else
 #ifdef DISSIPATIVE
   double alpha_D = 0.01;
   double dark_photon_mass = 1e-10;
   localSphP[i].Pressure = localSphP[i].Density * localSphP[i].EOSTemperature
-    + 2.0 * PI * alpha_D * localSphP[i].Density * localSphP[i].Density / (dark_photon_mass*dark_photon_mass);
+    + 2.0 * M_PI * alpha_D * localSphP[i].Density * localSphP[i].Density / (dark_photon_mass*dark_photon_mass);
+  return;
 #endif  // DISSIPATIVE
+#ifdef ISOTHERM_EQS
+  localSphP[i].Pressure = localSphP[i].Density * All.IsoSoundSpeed * All.IsoSoundSpeed;
+#else
+
 #ifdef LOCALLY_ISOTHERM_DISK
   double csnd;
   csnd = get_isotherm_disk_sound_speed(i);
