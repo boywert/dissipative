@@ -3630,11 +3630,14 @@ extern struct sph_particle_data
 #endif
 
 
-#if defined(EOS_DEGENERATE) || defined(EOS_OPAL)
+#if defined(EOS_DEGENERATE) || defined(EOS_OPAL) || defined(DISSIPATIVE)
   double EOSTemperature;
+#ifndef DISSIPATIVE
   double Composition[EOS_NSPECIES];     /* mass fractions of nuclei */
   double MassComposition[EOS_NSPECIES]; /* mass of a nuclei in the cell */
 #endif
+#endif
+
 
 #ifdef NUCLEAR_NETWORK
   double dedt;
