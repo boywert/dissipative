@@ -537,6 +537,9 @@ HOST_MEMORY_REPORTING         # reports after start-up the available system memo
 #INSPIRAL
 #PASSIVE_SCALARS=3
 
+
+#-------------------------------------- Dissipative Dark Sector
+DISSIPATIVE
 #-------------------------------------- Nuclear Network
 #NUCLEAR_NETWORK
 #NETWORK_NSE
