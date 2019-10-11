@@ -237,7 +237,7 @@ ENFORCE_JEANS_STABILITY_OF_CELLS    # this imposes an adaptive floor for the tem
 
 
 #--------------------------------------- TreePM Options
-PMGRID=512
+PMGRID=64
 #ASMTH=1.25
 #RCUT=6.0
 
