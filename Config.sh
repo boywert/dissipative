@@ -800,8 +800,8 @@ DISSIPATIVE
 
 
 #-------------------------------------- SIDM - Self-Interacting DM
-SIDM=2                                #activate and set types
-SIDM_MAXWELLIAN			       #Maxwellian cross section
+#SIDM=2                                #activate and set types
+#SIDM_MAXWELLIAN			       #Maxwellian cross section
 #SIDM_CONST_CROSS                      #constant cross section
 #SIDM_STATES=2                         #number of DM states (for inelastic models)
 #SIDM_REACTIONS=5                      #number of scatter reactions (for inelasitc models)
