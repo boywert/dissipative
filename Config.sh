@@ -512,7 +512,7 @@ HOST_MEMORY_REPORTING         # reports after start-up the available system memo
 #SECOND_ORDER_ICS
 #LONGIDS
 #OFFSET_FOR_NON_CONTIGUOUS_IDS
-#GENERATE_GAS_IN_ICS
+GENERATE_GAS_IN_ICS
 #SPLIT_PARTICLE_TYPE=4+8
 #NTYPES_ICS=6 # number of particle types in ICs, if not NTYPES (only works for 6, and non-HDF5 ICs!)
 
